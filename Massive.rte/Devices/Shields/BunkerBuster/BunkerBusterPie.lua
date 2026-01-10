@@ -1,5 +1,5 @@
 function BunkerBusterPlantingMode(actor)
-	local shield = ToAHuman(actor).BGEquippedItem;
+	local shield = ToAHuman(actor).EquippedBGItem;
 	if shield ~= nil and shield.PresetName == "RINOBI Bunker Buster" then
 		local shield = ToHeldDevice(shield);
 		shield:SetNumberValue("Enter Planting Mode", 1);

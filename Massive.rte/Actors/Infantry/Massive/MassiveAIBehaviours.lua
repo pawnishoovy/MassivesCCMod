@@ -94,19 +94,19 @@ function MassiveAIBehaviours.handleMovement(self)
 	local crouching = self.controller:IsState(Controller.BODY_CROUCH)
 	local moving = self.controller:IsState(Controller.MOVE_LEFT) or self.controller:IsState(Controller.MOVE_RIGHT);
 	
-	if self.hunchTimer:IsPastSimMS(3000) then
-		self.hunchTimer:Reset();
-		if self.Head then
-			local roofCheckRay = SceneMan:CastStrengthSumRay(self.Head.Pos, self.Head.Pos + Vector(0, -24), 4, 0);
-			if roofCheckRay > 150 then
-				self:SetRotAngleTarget(AHuman.STAND, -0.7);
-				self:SetRotAngleTarget(AHuman.WALK, -0.75);
-			else
-				self:SetRotAngleTarget(AHuman.STAND, 0);
-				self:SetRotAngleTarget(AHuman.WALK, -0.2);
-			end
-		end
-	end
+	-- if self.hunchTimer:IsPastSimMS(3000) then
+		-- self.hunchTimer:Reset();
+		-- if self.Head then
+			-- local roofCheckRay = SceneMan:CastStrengthSumRay(self.Head.Pos, self.Head.Pos + Vector(0, -24), 4, 0);
+			-- if roofCheckRay > 150 then
+				-- self:SetRotAngleTarget(AHuman.STAND, -0.7);
+				-- self:SetRotAngleTarget(AHuman.WALK, -0.75);
+			-- else
+				-- self:SetRotAngleTarget(AHuman.STAND, 0);
+				-- self:SetRotAngleTarget(AHuman.WALK, -0.2);
+			-- end
+		-- end
+	-- end
 	
 	-- Leg Collision Detection system
     --local i = 0
@@ -276,17 +276,17 @@ function MassiveAIBehaviours.handleMovement(self)
 			MassiveAIBehaviours.createVoiceSoundEffect(self, self.voiceSounds.Breathing, 1);
 		end
 		
-		self:SetLimbPathSpeed(0, self.limbPathDefaultSpeed0 * self.moveMultiplier);
-		self:SetLimbPathSpeed(1, self.limbPathDefaultSpeed1 * self.moveMultiplier);
-		self:SetLimbPathSpeed(2, self.limbPathDefaultSpeed2 * self.moveMultiplier);
-		self.LimbPathPushForce = self.limbPathDefaultPushForce * self.sprintPushForceDenominator
+		-- self:SetLimbPathSpeed(0, self.limbPathDefaultSpeed0 * self.moveMultiplier);
+		-- self:SetLimbPathSpeed(1, self.limbPathDefaultSpeed1 * self.moveMultiplier);
+		-- self:SetLimbPathSpeed(2, self.limbPathDefaultSpeed2 * self.moveMultiplier);
+		-- self.LimbPathPushForce = self.limbPathDefaultPushForce * self.sprintPushForceDenominator
 	else
 		self.isSprinting = false;
 		self.moveMultiplier = self.walkMultiplier;
-		self:SetLimbPathSpeed(0, self.limbPathDefaultSpeed0 * self.moveMultiplier);
-		self:SetLimbPathSpeed(1, self.limbPathDefaultSpeed1 * self.moveMultiplier);
-		self:SetLimbPathSpeed(2, self.limbPathDefaultSpeed2 * self.moveMultiplier);
-		self.LimbPathPushForce = self.limbPathDefaultPushForce * self.moveMultiplier
+		-- self:SetLimbPathSpeed(0, self.limbPathDefaultSpeed0 * self.moveMultiplier);
+		-- self:SetLimbPathSpeed(1, self.limbPathDefaultSpeed1 * self.moveMultiplier);
+		-- self:SetLimbPathSpeed(2, self.limbPathDefaultSpeed2 * self.moveMultiplier);
+		-- self.LimbPathPushForce = self.limbPathDefaultPushForce * self.moveMultiplier
 	end
 	
 	--- HEAT-like jetpack boost

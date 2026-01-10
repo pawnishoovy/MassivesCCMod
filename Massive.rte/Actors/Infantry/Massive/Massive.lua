@@ -195,10 +195,10 @@ function Create(self)
 
 	self.sprintPushForceDenominator = 1.1
 	
-	self.limbPathDefaultSpeed0 = self:GetLimbPathSpeed(0)
-	self.limbPathDefaultSpeed1 = self:GetLimbPathSpeed(1)
-	self.limbPathDefaultSpeed2 = self:GetLimbPathSpeed(2)
-	self.limbPathDefaultPushForce = self.LimbPathPushForce
+	self.limbPathDefaultSpeed0 = 2
+	self.limbPathDefaultSpeed1 = 2
+	self.limbPathDefaultSpeed2 = 2
+	self.limbPathDefaultPushForce = 10000
 	
 	self.lastVel = Vector(0, 0)
 	

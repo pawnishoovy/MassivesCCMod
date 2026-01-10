@@ -463,7 +463,7 @@ function Update(self)
 	end
 	
 	if self.satisfyingVolume > -0.5 then
-		self.satisfyingVolume = self.satisfyingVolume - (self.itHasBloomed and 0.006 or 0.01) * TimerMan.DeltaTimeSecs;
+		self.satisfyingVolume = self.satisfyingVolume - (self.itHasBloomed and 0.001 or 0.003) * TimerMan.DeltaTimeSecs;
 		if self.satisfyingVolume < -0.5 then
 			self.satisfyingVolume = -0.5;
 		end
@@ -599,7 +599,7 @@ function Update(self)
 			self.shoveDamage = true;
 		end	
 	
-		if self.parent:NumberValueExists("Warcried") and self.satisfyingVolume > 0.95 and self.itHasBloomed ~= true then
+		if self.parent:NumberValueExists("Warcried") and self.satisfyingVolume > 0.5 and self.itHasBloomed ~= true then
 			self.itHasBloomed = true;
 			self.TheViolence:FadeOut(100);
 			self.IsEscalating:Play(self.Pos);
